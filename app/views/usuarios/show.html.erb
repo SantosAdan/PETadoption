@@ -1,0 +1,25 @@
+<p id="notice"><font color="green"><%= notice %></font></p>
+
+<h2>Nome: <%= @usuario.nome%> <%= @usuario.sobrenome%></h2>
+
+<ul>
+	<li><%= @usuario.idade%></li>
+	<li><% if @usuario.sexo == "F" %>
+			Feminino
+		<% else %>
+			Masculino
+	    <% end %>
+	</li>
+	<li><%= @usuario.email%></li>
+	<li><% if @usuario.perfil == "O" %>
+			ONG
+		<% else %>
+			Pessoa Física
+	    <% end %>
+	</li>
+	<li><%= @usuario.endereco%></li>
+	<li><%= @usuario.telefone%></li>
+</ul>
+
+<%= link_to 'Editar', edit_usuario_path(@usuario) %>
+<%= link_to 'Home', root_path %>

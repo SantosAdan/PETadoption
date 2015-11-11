@@ -1,0 +1,58 @@
+<% if @usuario.errors.any? %>
+	<div id="error_explanation">
+		<h3><font color="red">Não foi possível realizar esta ação devido os seguintes erros:</font></h3>
+		<ul>
+			<% @usuario.errors.full_messages.each do |message|%>
+				<font color="red"><li><%= message %></li></font>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<%= form_for @usuario do |f| %>
+	<p>
+		<%= f.label :nome %><br />
+		<%= f.text_field :nome %>
+	</p>
+	<p>
+		<%= f.label :sobrenome %><br />
+		<%= f.text_field :sobrenome %>
+	</p>
+	<p>
+		<%= f.label :idade %><br />
+		<%= f.number_field :idade %>
+	</p>
+	<p>
+		<%= f.label :sexo %><br />
+		<%= f.radio_button :sexo, 'M', :checked => true %> Masculino
+		<%= f.radio_button :sexo, 'F' %> Feminino
+	</p>
+	<p>
+		<%= f.label :email %><br />
+		<%= f.email_field :email %>
+	</p>
+	<p>
+		<%= f.label :perfil %><br />
+		<%= f.radio_button :perfil, 'P', :checked => true %> Pessoa Física
+		<%= f.radio_button :perfil, 'O' %> ONG
+	</p>
+	<p>
+		<%= f.label :endereço %><br />
+		<%= f.text_field :endereco %>
+	</p>
+	<p>
+		<%= f.label :telefone %><br />
+		<%= f.telephone_field :telefone %>
+	</p>
+	<p>
+		<%= f.label :senha %><br />
+		<%= f.password_field :senha %>
+	</p>
+	<p>
+		<%= f.label :Confirmar_senha %><br />
+		<%= f.password_field :senha_confirmation %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
