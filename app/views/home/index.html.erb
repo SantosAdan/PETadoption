@@ -1,7 +1,15 @@
-<h1>PETadoption</h1>
+<div class="col-sm-offset-4 col-sm-8">
+	<h3>Usuários cadastrados recentemente</h3>
+</div>
 
-<p>
-	<ul>
-		<li><%= link_to "Cadastro", new_usuario_path %></li>
-	</ul>
-</p>
+<div class="container">
+	<div class="col-sm-offset-5 col-sm-2">
+		<ul class="list-group">
+			<% @usuarios.each do |usuario| %>
+			<li class="list-group-item">
+				<%= link_to usuario.nome_completo, usuario %>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+</div>

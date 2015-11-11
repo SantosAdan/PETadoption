@@ -9,50 +9,76 @@
 	</div>
 <% end %>
 
-<%= form_for @usuario do |f| %>
-	<p>
-		<%= f.label :nome %><br />
-		<%= f.text_field :nome %>
-	</p>
-	<p>
-		<%= f.label :sobrenome %><br />
-		<%= f.text_field :sobrenome %>
-	</p>
-	<p>
-		<%= f.label :idade %><br />
-		<%= f.number_field :idade %>
-	</p>
-	<p>
-		<%= f.label :sexo %><br />
-		<%= f.radio_button :sexo, 'M', :checked => true %> Masculino
-		<%= f.radio_button :sexo, 'F' %> Feminino
-	</p>
-	<p>
-		<%= f.label :email %><br />
-		<%= f.email_field :email %>
-	</p>
-	<p>
-		<%= f.label :perfil %><br />
-		<%= f.radio_button :perfil, 'P', :checked => true %> Pessoa Física
-		<%= f.radio_button :perfil, 'O' %> ONG
-	</p>
-	<p>
-		<%= f.label :endereço %><br />
-		<%= f.text_field :endereco %>
-	</p>
-	<p>
-		<%= f.label :telefone %><br />
-		<%= f.telephone_field :telefone %>
-	</p>
-	<p>
-		<%= f.label :senha %><br />
-		<%= f.password_field :senha %>
-	</p>
-	<p>
-		<%= f.label :Confirmar_senha %><br />
-		<%= f.password_field :senha_confirmation %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
+<%= form_for(@usuario, html: {class: 'form-horizontal'}) do |f| %>
+	<div class="field form-group">
+		<%= f.label :nome, class: 'col-sm-offset-1 col-sm-2 control-label' %>
+		<div class="col-sm-6">
+			<%= f.text_field :nome, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="field form-group">
+		<%= f.label :sobrenome, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
+		<div class="col-sm-6">
+			<%= f.text_field :sobrenome, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="field form-group">
+		<%= f.label :idade, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
+		<div class="col-sm-2">
+			<%= f.number_field :idade, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="field form-group">
+		<%= f.label :sexo, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
+		<div class="col-sm-2 radio-inline">
+			<%= f.radio_button :sexo, 'M', :checked => true %>
+			<%= label :sexo_M, 'Masculino'%>
+			<%= f.radio_button :sexo, 'F' %>
+			<%= label :sexo_F, 'Feminino'%> 
+		</div>
+	</div>
+	<div class="field form-group">
+		<%= f.label :email, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
+		<div class="col-sm-6">
+			<%= f.email_field :email, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="field form-group">
+		<%= f.label :perfil, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
+		<div class="col-sm-2 radio-inline">
+			<%= f.radio_button :perfil, 'P', :checked => true %>
+			<%= label :perfil_P, 'Pessoa Física'%>
+			<%= f.radio_button :sexo, 'O' %>
+			<%= label :perfil_O, 'ONG' %> 
+		</div>
+	</div>
+	<div class="field form-group">
+		<%= f.label :endereco, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
+		<div class="col-sm-6">
+			<%= f.text_field :endereco, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="field form-group">
+		<%= f.label :telefone, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
+		<div class="col-sm-6">
+			<%= f.telephone_field :telefone, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="field form-group">
+		<%= f.label :senha, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
+		<div class="col-sm-6">
+			<%= f.password_field :password, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="field form-group">
+		<%= f.label :confirmar_senha, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
+		<div class="col-sm-6">
+			<%= f.password_field :password_confirmation, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="actions form-group">
+		<div class="col-sm-offset-3 col-sm-2">
+			<%= f.submit nil, class: 'btn btn-primary'%>
+		</div>
+	</div>
 <% end %>

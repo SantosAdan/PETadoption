@@ -9,8 +9,7 @@ class CreateUsuarios < ActiveRecord::Migration
       t.string :perfil
       t.string :endereco
       t.string :telefone
-      t.string :username
-      t.string :senha
+      t.string :password
 
       t.index :email, unique: true
 

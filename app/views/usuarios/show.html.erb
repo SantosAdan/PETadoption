@@ -1,6 +1,4 @@
-<p id="notice"><font color="green"><%= notice %></font></p>
-
-<h2>Nome: <%= @usuario.nome%> <%= @usuario.sobrenome%></h2>
+<h1>Nome: <%= @usuario.nome%> <%= @usuario.sobrenome%></h1>
 
 <ul>
 	<li><%= @usuario.idade%></li>
@@ -22,4 +20,3 @@
 </ul>
 
 <%= link_to 'Editar', edit_usuario_path(@usuario) %>
-<%= link_to 'Home', root_path %>
