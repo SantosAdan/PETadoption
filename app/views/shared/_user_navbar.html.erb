@@ -1,0 +1,16 @@
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<%= link_to "PETadoption", root_path, class: 'navbar-brand' %>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-right">
+				<li><%= link_to t('layout.signout'), usuario_sessions_path, method: :delete, class: 'btn btn-danger navbar-btn' %></li>
+			</ul>
+			<ul class="nav navbar-right">
+				<li><%= link_to t('layout.my_profile'), usuario_path(current_user), class: 'btn btn-danger navbar-btn' %></li>
+			</ul>
+
+		</div>
+	</div>
+</nav>

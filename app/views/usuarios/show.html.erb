@@ -1,22 +1,30 @@
-<h1>Nome: <%= @usuario.nome%> <%= @usuario.sobrenome%></h1>
+<div class="col-sm-offset-4 col-sm-4">
+	<h2><%= t '.title', user_name: @usuario.nome_completo %></h2>
+</div>
 
-<ul>
-	<li><%= @usuario.idade%></li>
-	<li><% if @usuario.sexo == "F" %>
+<div class="col-sm-offset-4 col-sm-4">
+<ul class="list-group">
+	<li class="list-group-item"><%= t '.idade', idade: @usuario.idade%></li>
+	<li class="list-group-item">Sexo: 
+		<% if @usuario.sexo == "F" %>
 			Feminino
 		<% else %>
 			Masculino
 	    <% end %>
 	</li>
-	<li><%= @usuario.email%></li>
-	<li><% if @usuario.perfil == "O" %>
+	<li class="list-group-item"><%= t '.email', email: @usuario.email%></li>
+	<li class="list-group-item">Perfil: 
+		<% if @usuario.perfil == "O" %>
 			ONG
 		<% else %>
 			Pessoa Física
 	    <% end %>
 	</li>
-	<li><%= @usuario.endereco%></li>
-	<li><%= @usuario.telefone%></li>
+	<li class="list-group-item"><%= t '.endereco', endereco: @usuario.endereco%></li>
+	<li class="list-group-item"><%= t '.telefone', telefone: @usuario.telefone%></li>
 </ul>
+</div>
 
-<%= link_to 'Editar', edit_usuario_path(@usuario) %>
+<div class="col-sm-offset-4 col-sm-4">
+	<%= link_to t('.edit'), edit_usuario_path(@usuario), class: 'btn btn-primary' %>
+</div>

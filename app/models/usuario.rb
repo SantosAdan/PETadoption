@@ -17,6 +17,13 @@ class Usuario < ActiveRecord::Base
 		"#{nome} #{sobrenome}"
 	end
 
+	def self.authenticate(email, password)
+		usuario = find_by(email: email)
+		if usuario.present?
+			usuario.authenticate(password)
+		end
+	end
+
 	private
 	# Pode ser feita da sequinte forma validates_format_of :email, with: EMAIL_REGEXP
 	def email_format

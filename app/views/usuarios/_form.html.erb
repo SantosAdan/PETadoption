@@ -1,84 +1,89 @@
 <% if @usuario.errors.any? %>
-	<div id="error_explanation">
-		<h3><font color="red">Não foi possível realizar esta ação devido os seguintes erros:</font></h3>
-		<ul>
-			<% @usuario.errors.full_messages.each do |message|%>
-				<font color="red"><li><%= message %></li></font>
-			<% end %>
-		</ul>
+	<div id="error_explanation" class="col-sm-offset-4 col-sm-6">
+		<h4><font color="red"><%= t 'general.form_error' %></font></h4>
 	</div>
 <% end %>
 
 <%= form_for(@usuario, html: {class: 'form-horizontal'}) do |f| %>
 	<div class="field form-group">
-		<%= f.label :nome, class: 'col-sm-offset-1 col-sm-2 control-label' %>
-		<div class="col-sm-6">
+		<%= f.label :nome, class: 'col-sm-offset-2 col-sm-2 control-label' %>
+		<div class="col-sm-4">
 			<%= f.text_field :nome, class: 'form-control' %>
+				<font color="red"><%= error_tag @usuario, :nome %></font>
 		</div>
 	</div>
 	<div class="field form-group">
-		<%= f.label :sobrenome, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
-		<div class="col-sm-6">
+		<%= f.label :sobrenome, class: 'col-sm-offset-2 col-sm-2 control-label'  %>
+		<div class="col-sm-4">
 			<%= f.text_field :sobrenome, class: 'form-control' %>
+			<font color="red"><%= error_tag @usuario, :sobrenome %></font>
 		</div>
 	</div>
 	<div class="field form-group">
-		<%= f.label :idade, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
+		<%= f.label :idade, class: 'col-sm-offset-2 col-sm-2 control-label'  %>
 		<div class="col-sm-2">
 			<%= f.number_field :idade, class: 'form-control' %>
+			<font color="red"><%= error_tag @usuario, :idade %></font>
 		</div>
 	</div>
 	<div class="field form-group">
-		<%= f.label :sexo, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
+		<%= f.label :sexo, class: 'col-sm-offset-2 col-sm-2 control-label'  %>
 		<div class="col-sm-2 radio-inline">
-			<%= f.radio_button :sexo, 'M', :checked => true %>
-			<%= label :sexo_M, 'Masculino'%>
+			<%= f.radio_button :sexo, 'M' %>
+			<%= label :sexo_M, 'Masculino'%><br />
 			<%= f.radio_button :sexo, 'F' %>
 			<%= label :sexo_F, 'Feminino'%> 
+			<font color="red"><%= error_tag @usuario, :sexo %></font>
 		</div>
 	</div>
 	<div class="field form-group">
-		<%= f.label :email, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
-		<div class="col-sm-6">
+		<%= f.label :email, class: 'col-sm-offset-2 col-sm-2 control-label'  %>
+		<div class="col-sm-4">
 			<%= f.email_field :email, class: 'form-control' %>
+			<font color="red"><%= error_tag @usuario, :email %></font>
 		</div>
 	</div>
 	<div class="field form-group">
-		<%= f.label :perfil, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
-		<div class="col-sm-2 radio-inline">
-			<%= f.radio_button :perfil, 'P', :checked => true %>
-			<%= label :perfil_P, 'Pessoa Física'%>
-			<%= f.radio_button :sexo, 'O' %>
+		<%= f.label :perfil, class: 'col-sm-offset-2 col-sm-2 control-label'  %>
+		<div class="col-sm-4 radio-inline">
+			<%= f.radio_button :perfil, 'P' %>
+			<%= label :perfil_P, 'Pessoa Física'%><br />
+			<%= f.radio_button :perfil, 'O' %>
 			<%= label :perfil_O, 'ONG' %> 
+			<font color="red"><%= error_tag @usuario, :perfil %></font>
 		</div>
 	</div>
 	<div class="field form-group">
-		<%= f.label :endereco, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
-		<div class="col-sm-6">
+		<%= f.label :endereco, class: 'col-sm-offset-2 col-sm-2 control-label'  %>
+		<div class="col-sm-4">
 			<%= f.text_field :endereco, class: 'form-control' %>
+			<font color="red"><%= error_tag @usuario, :endereco %></font>
 		</div>
 	</div>
 	<div class="field form-group">
-		<%= f.label :telefone, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
-		<div class="col-sm-6">
+		<%= f.label :telefone, class: 'col-sm-offset-2 col-sm-2 control-label'  %>
+		<div class="col-sm-4">
 			<%= f.telephone_field :telefone, class: 'form-control' %>
+			<font color="red"><%= error_tag @usuario, :telefone %></font>
 		</div>
 	</div>
 	<div class="field form-group">
-		<%= f.label :senha, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
-		<div class="col-sm-6">
+		<%= f.label :password, class: 'col-sm-offset-2 col-sm-2 control-label'  %>
+		<div class="col-sm-4">
 			<%= f.password_field :password, class: 'form-control' %>
+			<font color="red"><%= error_tag @usuario, :password %></font>
 		</div>
 	</div>
 	<div class="field form-group">
-		<%= f.label :confirmar_senha, class: 'col-sm-offset-1 col-sm-2 control-label'  %>
-		<div class="col-sm-6">
+		<%= f.label :password_confirmation, class: 'col-sm-offset-2 col-sm-2 control-label'  %>
+		<div class="col-sm-4">
 			<%= f.password_field :password_confirmation, class: 'form-control' %>
+			<font color="red"><%= error_tag @usuario, :password_confirmation %></font>
 		</div>
 	</div>
 	<div class="actions form-group">
-		<div class="col-sm-offset-3 col-sm-2">
-			<%= f.submit nil, class: 'btn btn-primary'%>
+		<div class="col-sm-offset-4 col-sm-2">
+			<%= f.submit nil, class: 'btn btn-primary'%><br /><br />
 		</div>
 	</div>
 <% end %>

@@ -1,11 +1,11 @@
 <div class="col-sm-offset-4 col-sm-8">
-	<h1>Editar Usuário</h1>
+	<h2><%= t '.title' %></h2>
 </div>
 
 <%= render 'form' %>
 
 <div class="container">
 	<div class="col-sm-offset-5 col-sm-2">
-		<%= link_to "Voltar ao perfil", @usuario, class: 'btn btn-success' %><br /><br>
+		<%= link_to t('links.back'), @usuario, class: 'btn btn-success' %><br /><br>
 	</div>
 </div>
