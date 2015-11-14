@@ -1,0 +1,18 @@
+<div class="col-sm-offset-4 col-sm-4">
+	<h2><%= t '.title', animal_name: @animal.name %></h2>
+</div>
+
+<div class="col-sm-offset-4 col-sm-4">
+<ul class="list-group">
+	<li class="list-group-item">Espécie: 
+		<% if @animal.specie == "D" %>
+			Cachorro
+		<% else %>
+			Gato
+	    <% end %>
+</ul>
+</div>
+
+<div class="col-sm-offset-4 col-sm-4">
+	<%= link_to t('.edit'), edit_animal_path(@animal), class: 'btn btn-primary' %>
+</div>

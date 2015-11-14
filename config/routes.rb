@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :usuarios
+  resources :animals
 
-  #resources :confirmation, only: [:show]
   resource :usuario_sessions, only: [:create, :new, :destroy]
 
   root 'home#index'

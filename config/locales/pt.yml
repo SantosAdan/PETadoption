@@ -12,8 +12,12 @@ pt:
         sexo: Sexo
         sobrenome: Sobrenome
         telefone: Telefone
+      animal:
+        name: Nome
+        specie: Espécie
     models: 
       usuario: Usuário
+      animal: Animal
 
   usuarios: 
     new: 
@@ -29,6 +33,20 @@ pt:
       perfil: "Perfil: %{perfil}"
       endereco: "Endereço: %{endereco}"
       telefone: "Telefone: %{telefone}"
+
+  animals:
+    new:
+      title: Cadastrar animal
+    edit:
+      title: Editar dados do animals
+    show:
+      title: "%{animal_name}"
+      edit: Editar Animal
+    index:
+      title: Animais cadastrados recentemente
+      edit: Editar
+      destroy: Apagar
+      owner_html: "Dono: %{owner}"
 
   usuario_sessions:
     new:
@@ -46,6 +64,7 @@ pt:
     signout: Logout
     signin: Login
     my_profile: Meu Perfil
+    new_animal: Cadastrar Animal
 
   activemodel:
     attributes:
@@ -63,8 +82,17 @@ pt:
 
   flash:
     notice:
+      animal:
+        create: 'Animal cadastrado com sucesso!'
+        update: 'Animal atualizado com sucesso!'
+      user:
+        create: 'Usuário cadastrado com sucesso!'
+        update: 'Usuário atualizado com sucesso!'
       signed_in: Login efetuado com sucesso!
       signed_out: Logout efetuado com sucesso. Até breve!
       already_logged_in: Você já está logado!
     alert:
       needs_login: Você precisa estar logado para continuar!
+      
+  dialogs:
+    destroy: Deseja mesmo apagar?

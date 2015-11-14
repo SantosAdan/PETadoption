@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
 	def index
-		@usuarios = Usuario.take(3)
+		@usuarios = Usuario.last(5).reverse
 	end
 end

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111171526) do
+ActiveRecord::Schema.define(version: 20151114175510) do
+
+  create_table "animals", force: :cascade do |t|
+    t.string   "name"
+    t.string   "specie"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "usuario_id"
+  end
+
+  add_index "animals", ["usuario_id"], name: "index_animals_on_usuario_id"
 
   create_table "usuarios", force: :cascade do |t|
     t.string   "nome"
@@ -22,10 +32,12 @@ ActiveRecord::Schema.define(version: 20151111171526) do
     t.string   "perfil"
     t.string   "endereco"
     t.string   "telefone"
-    t.string   "username"
+    t.string   "password"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
   end
+
+  add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true
 
 end
