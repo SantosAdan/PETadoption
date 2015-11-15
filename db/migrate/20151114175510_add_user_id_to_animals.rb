@@ -3,3 +3,4 @@ class AddUserIdToAnimals < ActiveRecord::Migration
     add_reference :animals, :usuario, index: true, foreign_key: true
   end
 end
+

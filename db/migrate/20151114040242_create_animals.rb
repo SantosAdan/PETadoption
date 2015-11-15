@@ -8,3 +8,4 @@ class CreateAnimals < ActiveRecord::Migration
     end
   end
 end
+
