@@ -15,6 +15,7 @@ pt:
       animal:
         name: Nome
         specie: Espécie
+        picture: Foto
     models: 
       usuario: Usuário
       animal: Animal
@@ -44,9 +45,10 @@ pt:
       edit: Editar Animal
     index:
       title: Animais cadastrados recentemente
+    animal:
       edit: Editar
       destroy: Apagar
-      owner_html: "Dono: %{owner}"
+      owner_html: "&mdash; %{owner}"
 
   usuario_sessions:
     new:
@@ -55,6 +57,10 @@ pt:
 
   links: 
     back: Voltar
+    
+  home:
+    index:
+      title: Animais cadastrados recentemente
 
   general:
     form_error: Há erros no formulário. Verifique.
@@ -65,6 +71,7 @@ pt:
     signin: Login
     my_profile: Meu Perfil
     new_animal: Cadastrar Animal
+    list_animal: Listar Animais
 
   activemodel:
     attributes:
@@ -77,6 +84,8 @@ pt:
 
   helpers:
     submit:
+      animal:
+        create: Cadastrar Animal
       usuario_session:
         create: Entrar
 

@@ -10,10 +10,14 @@
 			<ul class="nav navbar-right">
 				<li><%= link_to t('layout.my_profile'), usuario_path(current_user), class: 'btn btn-danger navbar-btn' %></li>
 			</ul>
-            <ul class="nav navbar-right">
-                <li><%= link_to t('layout.new_animal'), new_animal_path, class: 'btn btn-danger navbar-btn' %></li>
-			</ul>
-
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown btn"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Animais <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><%= link_to t('layout.new_animal'), new_animal_path%></li>
+                        <li><%= link_to t('layout.list_animal'), animals_path%></li>
+                    </ul>
+                </li>
+            </ul>
 		</div>
 	</div>
 </nav>

@@ -32,6 +32,10 @@ gem 'autoprefixer-rails'
 
 # File/Image Uploader
 gem 'carrierwave', '0.10.0'
+gem 'rmagick', :require => 'RMagick'
+
+# Friendly_ID
+gem 'friendly_id', '5.0.3'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

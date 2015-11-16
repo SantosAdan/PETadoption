@@ -2,7 +2,7 @@ class Usuario < ActiveRecord::Base
 	
 	EMAIL_REGEXP = /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
     
-    has_many :animals
+    has_many :animals, dependent: :destroy
 
 	# Validações
 	validates_presence_of :nome, :sobrenome, :idade, :sexo, :email
