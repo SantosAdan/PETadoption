@@ -8,7 +8,7 @@
         <% if @animal.picture.url != nil %>
             <img src="<%= @animal.picture.url %>" class="img-circle img-responsive" />
         <% end %><br />
-                    </div>
+    </div>
 	<li class="btn">Espécie: 
 		<% if @animal.specie == "D" %>
 			Cachorro
@@ -19,5 +19,8 @@
 </div>
 
 <div class="col-sm-offset-4 col-sm-4">
-	<%= link_to t('.edit'), edit_animal_path(@animal), class: 'btn btn-primary' %>
+    <% if belongs_to_user(@animal) %>
+	   <%= link_to t('.edit'), edit_animal_path(@animal), class: 'btn btn-primary' %>
+    <% end %>
+    <%= link_to t('links.back'), root_path, class: 'btn btn-success'  %>
 </div>

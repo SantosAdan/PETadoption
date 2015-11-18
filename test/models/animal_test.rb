@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class AnimalTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def test_should_not_save_user_without_name
+        animal = Animal.new
+        assert !animal.save
+ end
 end
