@@ -13,3 +13,4 @@ class Animal < ActiveRecord::Base
         order(created_at: :desc)
     end
 end
+
