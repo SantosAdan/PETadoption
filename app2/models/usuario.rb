@@ -2,9 +2,8 @@ class Usuario < ActiveRecord::Base
 	
 	EMAIL_REGEXP = /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
     
+    has_many :reviews, dependent: :destroy
     has_many :animals, dependent: :destroy
-    has_many :reviews, :class_name => 'Review', :foreign_key => 'reviewed_id'
-    has_many :reviewed_by, :class_name => 'Review', :foreign_key => 'reviewer_id'
 
 	# Validações
 	validates_presence_of :nome, :sobrenome, :idade, :sexo, :email

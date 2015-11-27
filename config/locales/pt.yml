@@ -60,7 +60,7 @@ pt:
     
   home:
     index:
-      title: Animais cadastrados recentemente
+      title: Usuários recentes
 
   general:
     form_error: Há erros no formulário. Verifique.

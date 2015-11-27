@@ -4,7 +4,9 @@ class AnimalsController < ApplicationController
     before_action :require_authentication, only: [:new, :edit, :create, :update, :destroy]
     
     def index
-        @animals = Animal.most_recent
+        @animals = Animal.most_recent.map do |animal|
+            AnimalPresenter.new(animal, self, false)
+        end
     end
     
 	def new
@@ -20,8 +22,12 @@ class AnimalsController < ApplicationController
 			render action: :new
 		end
 	end
-
+    
+    # Talvez precisa ficar iqual a ação INDEX
 	def show
+        @animals = Animal.most_recent.map do |animal|
+            AnimalPresenter.new(animal, self, false)
+        end
 	end
 
 	def edit
@@ -59,7 +65,8 @@ class AnimalsController < ApplicationController
 	end
     
     def set_animal
-        @animal = Animal.friendly.find(params[:id])
+        animal_model = Animal.friendly.find(params[:id])
+        @animal = AnimalPresenter.new(animal_model, self)
     end
     
     def set_users_animal

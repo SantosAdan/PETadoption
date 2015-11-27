@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  for_usuario_id: 
-  by_usuario_id: 
+  usuario_id: 
+  animal_id: 
   points: 1
 
 two:
-  for_usuario_id: 
-  by_usuario_id: 
+  usuario_id: 
+  animal_id: 
   points: 1

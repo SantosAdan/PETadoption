@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118024758) do
+ActiveRecord::Schema.define(version: 20151126044508) do
 
   create_table "animals", force: :cascade do |t|
     t.string   "name"
     t.string   "specie"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "usuario_id"
     t.string   "slug"
     t.string   "picture"
+    t.integer  "reviews_count"
   end
 
   add_index "animals", ["slug"], name: "index_animals_on_slug", unique: true
@@ -39,6 +40,16 @@ ActiveRecord::Schema.define(version: 20151118024758) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "reviewer_id"
+    t.integer  "reviewed_id"
+    t.integer  "points"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reviews", ["reviewer_id", "reviewed_id"], name: "index_reviews_on_reviewer_id_and_reviewed_id", unique: true
+
   create_table "usuarios", force: :cascade do |t|
     t.string   "nome"
     t.string   "sobrenome"
@@ -52,6 +63,8 @@ ActiveRecord::Schema.define(version: 20151118024758) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
+    t.integer  "reviewed_id"
+    t.integer  "reviewer_id"
   end
 
   add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true

@@ -1,0 +1,16 @@
+<section class="review">
+    <% if user_signed_in? %>
+    <%= form_for [review.reviewed, review], remote: true do |f| %> <!-- review.REVIEWED para pegar o user.id de quem está-->
+            <% Review::POINTS.each do |point| %>                   <!-- sendo editado-->
+                <%= f.radio_button :points, point %>
+                <%= f.label :points, point, value: point %>
+            <% end %>
+            <%= f.submit %>
+        <% end %>
+    <% else%>
+        <span class="login_required">
+            <% t('.login_to_review') %>
+        </span>
+    <% end %>
+</section>
+    

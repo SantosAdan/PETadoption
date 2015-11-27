@@ -1,0 +1,39 @@
+<div class="col-sm-offset-4 col-sm-8">
+	<h2><%= t '.title' %></h2>
+</div>
+
+<% if @usuario_session.errors.has_key? :base %>
+	<div class="error_explanation col-sm-offset-4 col-sm-8">
+		<%= @usuario_session.errors[:base].join(', ') %>
+	</div>
+<% end %>
+
+<div class="container col-sm-offset-3 col-sm-6">
+	<div class="jumbotron">
+<%= form_for(@usuario_session, html: {class: 'form-horizontal'}) do |f| %>
+	<div class="field form-group">
+		<%= f.label :email, class: 'col-sm-offset-3 col-sm-2 control-label' %>
+		<div class="col-sm-4">
+			<%= f.text_field :email, class: 'form-control' %>
+				<font color="red"><%= error_tag @usuario_session, :email %></font>
+		</div>
+	</div>
+	<div class="field form-group">
+		<%= f.label :password, class: 'col-sm-offset-3 col-sm-2 control-label' %>
+		<div class="col-sm-4">
+			<%= f.password_field :password, class: 'form-control' %>
+				<font color="red"><%= error_tag @usuario_session, :password %></font>
+		</div>
+	</div>
+	<div class="actions form-group">
+		<div class="col-sm-offset-5 col-sm-2">
+			<%= f.submit nil, class: 'btn btn-primary'%><br /><br />
+		</div>
+	</div>
+
+	<div class="col-sm-offset-4 col-sm-5	">
+		Ainda não faz parte do PETadoption? <%= link_to t('.sign_up'), new_usuario_path %>
+	</div>
+<% end %>
+</div>
+</div>
