@@ -1,6 +1,7 @@
 class UsuariosController < ApplicationController
     before_action :require_no_authentication, only: [:new, :create]
     before_action :can_change, only: [:edit, :update]
+    before_action :require_authentication, only: [:destroy]
     
 	def new
 		@usuario = Usuario.new #Variáveis de instância "@var" são acessíveis pela VIEW
@@ -34,6 +35,13 @@ class UsuariosController < ApplicationController
 			render action: :edit
 		end
 	end
+    
+    def destroy
+        @usuario = Usuario.find(params[:id])
+        @usuario.destroy
+        user_session.destroy
+        redirect_to root_path
+    end
     
 	private
 

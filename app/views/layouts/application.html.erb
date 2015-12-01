@@ -2,8 +2,8 @@
 <html lang="pt">
 <head>
   <title>PETadoption</title>
-  <%= stylesheet_link_tag    "default" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    "default" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,17 +16,28 @@
 		<%= render 'shared/visitor_navbar' %>
 	<% end %>
 	</header>
-
-	<div id="content">
+    
+    <div class="row">
+	<div id="notices" class="col-lg-offset-3 col-lg-4">
 		<% if notice.present? %>
-			<p id="notice"><%= notice %></p>
+			<div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <%= notice %>
+            </div>
 		<% end %>
 		<% if alert.present? %>
-			<p id="alert"><%= alert %></p>
+			<div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <%= alert %>
+            </div>
 		<% end %>
-
-		<%= yield %>
-	</div>
-
+    </div>
+    </div>
+    
+    <div class="row">
+        <%= yield %>
+    </div>
+	
 </body>
+
 </html>

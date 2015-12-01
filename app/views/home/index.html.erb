@@ -1,17 +1,33 @@
-<div class="container-fluid">
-    <div class="col-sm-offset-4 col-sm-4">
-        <h3><%= t '.title' %></h3>
+<div class="row">
+    <div class="container_fluid">
+    <div class="jumbotron text-center">
+        <h1>Bem-vindo ao <span id="cor">PET</span>Adoption!</h1>
+        <h4>Aqui você pode adotar ou oferecer um animal para adoção! <span class="glyphicon glyphicon-heart"></span></h4>
     </div>
+    </div>
+</div>
 
-    <div class="container-fluid">
-        <div class="col-sm-offset-3 col-sm-4">
-            <ul class="list-group">
-                <% @usuarios.each do |usuario| %>
-                <li class="list-group-item">
-                    <p class="text-center text-capitalize"><%= link_to usuario.nome_completo, usuario %></p>
-                </li>
-                <% end %>
-            </ul>
-        </div>
+<div class="row">
+    <div class="container-fluid"></div>
+    <div class="container-fluid"></div>
+    <div class="container col-lg-4 col-lg-offset-2 text-center">
+        <h3><%= t '.title_usuario' %></h3>
+        <table class="table table-responsive table-bordered table-striped">
+            <% @usuarios.each do |usuario| %>
+            <tr>
+                <td class="text-capitalize"><%= link_to usuario.nome_completo, usuario %></td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+    <div class="container col-lg-4 text-center">
+        <h3><%= t '.title_animal' %></h3>
+        <table class="table table-responsive table-bordered table-striped   ">
+            <% @animals.each do |animal| %>
+            <tr>
+                <td class="text-capitalize"><%= link_to animal.name, animal %> - <%= animal.usuario.nome_completo %></td>
+            </tr>
+            <% end %>
+        </table>
     </div>
 </div>

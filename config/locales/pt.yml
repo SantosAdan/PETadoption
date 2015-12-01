@@ -34,6 +34,7 @@ pt:
       perfil: "Perfil: %{perfil}"
       endereco: "Endereço: %{endereco}"
       telefone: "Telefone: %{telefone}"
+      delete: Apagar Perfil
 
   animals:
     new:
@@ -52,7 +53,7 @@ pt:
 
   usuario_sessions:
     new:
-      title: Faça login no PETadoption
+      title: Faça login no PETadoption!!!
       sign_up: Cadastre-se!
 
   links: 
@@ -60,7 +61,8 @@ pt:
     
   home:
     index:
-      title: Usuários recentes
+      title_usuario: Usuários recentes
+      title_animal: Animais recentes
 
   general:
     form_error: Há erros no formulário. Verifique.
