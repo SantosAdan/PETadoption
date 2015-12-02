@@ -2,9 +2,14 @@ Rails.application.routes.draw do
     resources :usuarios do
         resources :reviews, only: [:create, :update], module: :usuarios
     end        
-    resources :animals
+    
+    resources :animals do
+        member do   
+            get 'send_mail' => 'animals#sendmail'
+        end
+    end
 
-
+    
     resource :usuario_sessions, only: [:create, :new, :destroy]
 
     root 'home#index'

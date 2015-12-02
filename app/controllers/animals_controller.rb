@@ -40,6 +40,13 @@ class AnimalsController < ApplicationController
         redirect_to animals_path
     end
     
+    def sendmail
+        @animal = Animal.friendly.find(params[:id])
+        @adopter = current_user
+        Notifications.adoption(@animal, @adopter).deliver
+        redirect_to animals_path, notice: 'Email enviado com sucesso'
+    end
+    
     def picture_url
         @animal.picture_url
     end

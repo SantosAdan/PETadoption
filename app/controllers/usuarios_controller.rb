@@ -42,7 +42,7 @@ class UsuariosController < ApplicationController
         user_session.destroy
         redirect_to root_path
     end
-    
+        
 	private
 
 	def user_params

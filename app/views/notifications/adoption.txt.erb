@@ -1,0 +1,3 @@
+<%= t '.title' %>
+<%= t '.body', full_name: @animal.usuario.nome_completo, animal_name: @animal.name %>
+<%= t '.adopter', link: link_to(@usuario.nome_completo, usuario_path(@adopter)) %>
