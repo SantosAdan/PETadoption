@@ -34,6 +34,7 @@ pt:
       perfil: "Perfil: %{perfil}"
       endereco: "Endereço: %{endereco}"
       telefone: "Telefone: %{telefone}"
+      delete: Apagar Perfil
 
   animals:
     new:
@@ -52,7 +53,7 @@ pt:
 
   usuario_sessions:
     new:
-      title: Faça login no PETadoption
+      title: Faça login no PETadoption!!!
       sign_up: Cadastre-se!
 
   links: 
@@ -60,7 +61,8 @@ pt:
     
   home:
     index:
-      title: Usuários recentes
+      title_usuario: Usuários recentes
+      title_animal: Animais recentes
 
   general:
     form_error: Há erros no formulário. Verifique.
@@ -88,7 +90,20 @@ pt:
         create: Cadastrar Animal
       usuario_session:
         create: Entrar
-
+  
+  notifications:
+    adoption:
+      subject: 'Um usuário tem interesse em adotar um de seus animais.'
+      title: 'Interesse de adoção.'
+      body: |
+          Olá, %{full_name}. 
+          Nós do PETAdoption registramos que existe alguém querendo adotar um de seus animais, o %{animal_name}.
+      adopter_html: 'Para saber quem tem interesse, acesse o link para o perfil de: %{link}.'
+      
+  notification:
+    adoption:
+      subject: 'Um usuario tem interesse em adotar um de seus animais.'
+  
   flash:
     notice:
       animal:
@@ -97,11 +112,11 @@ pt:
       user:
         create: 'Usuário cadastrado com sucesso!'
         update: 'Usuário atualizado com sucesso!'
-      signed_in: Login efetuado com sucesso!
-      signed_out: Logout efetuado com sucesso. Até breve!
-      already_logged_in: Você já está logado!
+      signed_in: 'Login efetuado com sucesso!'
+      signed_out: 'Logout efetuado com sucesso. Até breve!'
+      already_logged_in: 'Você já está logado!'
     alert:
-      needs_login: Você precisa estar logado para continuar!
+      needs_login: 'Você precisa estar logado para continuar!'
       
   dialogs:
     destroy: Deseja mesmo apagar?

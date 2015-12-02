@@ -3,12 +3,22 @@ li {
 }
 
 img {
-    width: 150px; 
-    height: 150px;
+    width: 100px; 
+    height: 100px;
+}
+
+footer {
+    margin-top: 100px;
+    padding-top: 10px;
+    background-color: darkgrey;
+    bottom: 0px;
+    width: 100%;
+    font-family: monospace;
 }
 
 #content .review form {
     margin: 0;
+    border: 20px;
 }
 
 #content .review {
@@ -22,8 +32,25 @@ img {
     display: inline;
 }
 
-.review .login_required {
-    font-size: 0.8em;
-    color: #666;
-    font-variant: small-caps;
+.jumbotron {
+    background-color: #1E90FF;
+    color: #ffffff;
+    padding: 100px 25px;
+    font-family: cursive;
+}
+
+.container-fluid {
+    padding: 20px 10px;
+}
+
+#cor {
+    color: #B0E0E6;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #B0E0E6;
+}
+
+.table > tr > td > a {
+    color: #ffffff;
 }

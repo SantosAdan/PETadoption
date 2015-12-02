@@ -1,0 +1,7 @@
+<h1><%= t '.title' %></h1>
+<p>
+    <%= t '.body', full_name: @animal.usuario.nome_completo, animal_name: @animal.name %>
+</p>
+<p>
+    <%= t '.adopter_html', link: link_to(@adopter.nome_completo, usuario_url(@adopter)) %>
+</p>

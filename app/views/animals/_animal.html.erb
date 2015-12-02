@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="col-sm-offset-3 col-sm-6">
+<div class="row">
+    <div class="col-sm-offset-3 col-sm-4">
         <ul class="list-group">
                 <div class="list-group-item">
                     <h4><%= link_to animal.name, animal %> <%= t'.owner_html', owner: animal.usuario.nome_completo %></h4>
@@ -21,6 +21,10 @@
                         <li class="btn"><%= link_to t('.edit'), edit_animal_path(animal), class: 'btn btn-primary' %></li>
                         <li class="btn"><%= link_to t('.destroy'), animal_path(animal), class: 'btn btn-danger', method: :delete, data: {confirm: t('dialogs.destroy')}  %></li>
                     </ul>
+                    <% end %>
+                    <% if !belongs_to_user(animal) %>
+                    <li class="btn"><%= link_to "Adotar", send_mail_animal_path(animal, current_user), class: 'btn btn-success' %></li>
+                    
                     <% end %>
                 </div>
         </ul>
